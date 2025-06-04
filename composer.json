@@ -1,0 +1,40 @@
+{
+    "name": "example/symfony-package",
+    "description": "A modern Symfony package example",
+    "type": "library",
+    "require": {
+        "php": "^8.4"
+    },
+    "require-dev": {
+        "symfony/phpunit-bridge": "^7.0",
+        "pestphp/pest": "^2.0",
+        "phpstan/phpstan": "^1.0"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Rumen Damyanov",
+            "email": "contact@rumenx.com"
+        }
+    ],
+    "config": {
+        "allow-plugins": {
+            "pestphp/pest-plugin": true
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "Example\\SymfonyPackage\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Example\\SymfonyPackage\\Tests\\": "tests/"
+        }
+    },
+    "scripts": {
+        "test": "pest",
+        "analyze": "phpstan analyse --no-progress --error-format=table",
+        "coverage": "pest --coverage --coverage-html=coverage"
+    }
+}
